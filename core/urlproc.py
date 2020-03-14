@@ -7,6 +7,12 @@ import requests
 from core import urlmarker
 
 
+def remove_empty(file_list):
+    """Given a file list, return only those that aren't empty string or None.
+    """
+    return [x for x in file_list if x not in ["", None]]
+
+
 def record_response(url, response, check_results):
     """
     record response status of an input url. This function is run after success,
